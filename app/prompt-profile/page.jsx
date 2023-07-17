@@ -11,7 +11,7 @@ const PromptProfile = () => {
     const userId = searchParams.get('id');
 
     const [posts, setPosts] = useState([])
-
+    console.log("name", posts.find((post) => post)?.creator?.username);
     useEffect(() => {
         const fetchPosts = async () => {
             const response = await fetch(`/api/users/${userId}/posts`);
@@ -46,8 +46,7 @@ const PromptProfile = () => {
 
     return (
         <Profile
-            name="My"
-            desc="Welcome to your personalized profile page"
+            name={posts.find((post) => post)?.creator?.username}
             data={posts}
             handleEdit={handleEdit}
             handleDelete={handleDelete}

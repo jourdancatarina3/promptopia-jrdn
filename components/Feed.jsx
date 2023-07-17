@@ -23,8 +23,6 @@ const Feed = () => {
   const [posts, setPosts] = useState([]);
 
   
-  console.log("posts", posts.map((post) => post.prompt));
-
   const searchFilter = (array) => {
     return array.filter((post) =>(
       post.prompt.toLowerCase().includes(searchText.toLowerCase()) 
